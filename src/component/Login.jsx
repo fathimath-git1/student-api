@@ -1,0 +1,70 @@
+import React, { useState } from 'react';
+import Nav from './Nav';
+
+const Login = () => {
+  const [input, changeInput] = useState({
+    username: '',
+    password: '',
+  });
+
+  const inputhandler = (event) => {
+    changeInput({ ...input, [event.target.name]: event.target.value });
+  };
+
+  const readValue = () => {
+    console.log(input);
+  };
+
+  return (
+    <div>
+      <Nav />
+      <div className="container" style={{ paddingTop: '100px' }}>
+        <div className="col col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 col-xxl-6 mx-auto">
+          
+          <div className="row g-3">
+            <div className="col-6 mx-auto">
+              <label className="form-label"><b>Username</b></label>
+              <input
+                type="text"
+                className="form-control"
+                name="username"
+                value={input.username}
+                onChange={inputhandler}
+              />
+            </div>
+          </div>
+
+          <div className="row g-3">
+            <div className="col-6 mx-auto">
+              <label className="form-label"><b>Password</b></label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                value={input.password}
+                onChange={inputhandler}
+              />
+            </div>
+          </div>
+
+          <div className=" mt-3">
+            <div className="col-6 mx-auto">
+              <button className="btn btn-primary w-100" onClick={readValue}>
+                Login
+              </button>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-12 text-center mt-2">
+              <p>Don’t have an account? <a href="/Signup">Sign up</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;

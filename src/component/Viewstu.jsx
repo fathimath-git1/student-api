@@ -33,6 +33,7 @@ const Viewstu = () => {
                 <table class="table table-bordered">
                   <thead>
                     <tr>
+                      <th scope="col">id</th>
                       <th scope="col">name</th>
                       <th scope="col">roll no</th>
                       <th scope="col">admission no</th>
@@ -45,6 +46,7 @@ const Viewstu = () => {
                         return (
 
                           <tr>
+                            <td>{val.id}</td>
                             <th scope="row">{val.name}</th>
                             <td>{val.roll_number}</td>
                             <td>{val.admission_number}</td>
